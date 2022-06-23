@@ -3,7 +3,8 @@
 
 body {
 	font-family: "Roboto Mono", monospace;
-	font-size: 14px;
+	font-size: 0.95em;
+	/*font-size: 14px;*/
 	font-weight: 300;
 	color: rgba(51, 51, 51, 1.00);
 	line-height: 1.4em;
