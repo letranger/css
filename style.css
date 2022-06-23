@@ -1,0 +1,171 @@
+hover {
+ color:var(--o);
+ text-decoration-color:var(--o)
+}
+.ex {
+ color:var(--v)
+}
+.op,
+.fu,
+.ot {
+ color:var(--b)
+}
+.bu {
+ color:var(--m)
+}
+.dt {
+ color:var(--o)
+}
+.kw {
+ color:var(--y)
+}
+.st {
+ color:var(--g)
+}
+.co {
+ opacity:.4
+}
+.todo,
+.done {
+ background:var(--r);
+ color:#fff;
+ font-weight:700;
+ font-size:.66em;
+ padding:.2em
+}
+.done {
+ background:var(--g)
+}
+.inlineblockimg {
+ display:inline-block
+}
+.inlineblockimg>img {
+ display:inline-block;
+ vertical-align:middle;
+ width:3em
+}
+
+/* billw additions */
+
+.html-preamble a {text-decoration: none;}
+.archive-item a {text-decoration: none;}
+
+/* possible two-column stuff */
+
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+}
+
+.left {
+    display: block;
+    margin-left: 0;
+    margin-right: auto;
+    /* width: 50%; */
+}
+
+.right {
+    display: block;
+    margin-left: auto;
+    margin-right: 0;
+    /* width: 50%; */
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 35px;
+}
+/* .child { */
+/*     width: 100vw; */
+/*     position: relative; */
+/*     left: calc(-50vw + 50%); */
+/* } */
+
+.grid-title-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 35px;
+    font-size: larger;
+    font-weight: bold;
+    text-align: left;
+}
+
+.grid-title1-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 35px;
+    font-size: larger;
+    text-align: left;
+}
+
+.grid-center-container {
+    display: grid;
+    /* grid-template-columns: 1fr 1fr; */
+    /* grid-gap: 20px; */
+    /* font-size: larger; */
+    text-align: center;
+}
+
+.grid-child-russian {
+    /* font-size: smaller; */
+    lang: "ru";
+    padding-top: 2px;
+    text-align: left;
+    hyphens: auto;
+}
+
+.grid-child-russian-rightalign {
+    /* font-size: smaller; */
+    lang: "ru";
+    padding-top: 2px;
+    text-align: right;
+}
+
+.grid-child-english {
+    /* font-size: larger; */
+    padding: 2px 0 0 0;
+    text-align: left;
+    hyphens: auto;
+}
+
+.grid-child-english-leftalign {
+    /* font-size: larger; */
+    padding: 2px 0 0 0;
+    text-align: left;
+}
+
+.ol {
+    font-size: xxx-large;
+}
+
+.post-list {
+    padding: 0;
+}
+.post-list .post-item {
+    margin-bottom: 1rem;
+    margin-left: 0;
+    list-style-type: none;
+}
+.post-list .post-item .meta {
+    display: block;
+    margin-right: 16px;
+    min-width: 100px;
+    color: #666;
+    font-size: 14px;
+}
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+.redbox {
+    background-color: var(--r);
+    color: var(--bg);
+}
