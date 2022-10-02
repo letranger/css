@@ -1,0 +1,21 @@
+Inconsolata font version 3.001 downloaded from
+https://github.com/googlefonts/Inconsolata
+
+The directory mini/ contains versions of the fonts in [woff] format with some
+glyphs removed to reduce the size. The glyphs that remain are:
+
+- Basic Latin
+- Latin-1 Supplement
+- General Punctuation
+- Arrows
+- Mathematical Operators
+- Control Pictures
+- Box Drawing
+- Block Elements
+- Geometric Shapes
+- Symbols Misc.
+- Symbols and Arrows Supplement
+- Specials
+
+-----
+[woff]: https://developer.mozilla.org/en-US/docs/Web/Guide/WOFF
