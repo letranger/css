@@ -449,7 +449,7 @@ table {
     border-bottom: 1px solid gray;
 }
 thead {
-	/*border-bottom: 1px dashed black;*/
+	/*border-bottom: 1px hed black;*/
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
 }
@@ -471,4 +471,15 @@ tr:nth-child(odd) {
 }
 tbody {
 	/* border-bottom: 1px solid black; */
+}
+.footer {
+    bottom:0px;
+    padding:20px;
+    width: 100%;
+    /*background: #6cf;*/
+}
+.footer{
+    position: relative;
+    top: 0px;
+    height: 50px;
 }
