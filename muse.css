@@ -248,7 +248,7 @@ pre .linenr.org-src-container {
 
 /* chatgpt */
 .src .linenr {
-    user-select: none; /* 阻止选择行号 */
+    user-select: none; /* 禁止選擇行号 */
 }
 
 .code {
