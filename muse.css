@@ -110,6 +110,23 @@ H5 {
   line-height: 1;
 }
 
+H5 {
+  margin-left: -5px;
+  margin-right: 0px;
+  PADDING: 3px 0px 3px 10px;
+  font-family: "Trebuchet MS";
+  font-family: "Roboto Mono", monospace;
+  FONT-WEIGHT: bold;
+  font-size: 16px;
+  /* COLOR: (#963455; fce6eb) (4d2b82, e0d5f1) */
+  COLOR: #148F77;
+  BORDER-bottom: #148F77 1px solid;
+  BORDER-LEFT: #148F77 4px solid;
+  /*BACKGROUND: #f2dad8;*/
+  line-height: 1;
+/*  background-image: url(../images/nicebg2.png);*/
+}
+
 H2:hover, H3:hover, H4:hover, H5:hover {
   BORDER-bottom-style: dashed; 
 }
@@ -208,6 +225,30 @@ pre {
    background: #FFF;
    color: black;
    text-align: left;
+   counter-reset: line; /* chatgpt */
+}
+
+/* chatgpt */
+pre .linenr:not(.org-src-container) {
+    content: counter(line);
+    counter-increment: line;
+    padding-right: 1em;
+    color: #999;
+    color: #20b2aa;
+    border-right: 1px solid #ddd;
+    border-right: 1px dashed #66cdaa;
+    margin-right: 1em;
+    display: inline-block;
+}
+
+/* chatgpt */
+pre .linenr.org-src-container {
+    display: none;
+}
+
+/* chatgpt */
+.src .linenr {
+    user-select: none; /* 阻止选择行号 */
 }
 
 .code {
@@ -234,9 +275,8 @@ hr {
 }
 
 table {
-   /*font: 10px/1.2 Verdana, Arial, Helvetica, sans-serif;*/
    border: #66c 1px solid;
-   background: #eee /*url("images/bg2.png")*/;
+   background: #eee
    padding: 2px;
    margin-top: 5px;
    margin-left: auto;
@@ -260,6 +300,7 @@ table.ruled td {
    text-align: left;
    padding-left: 3px;
 }
+
 
 .nonexistent { color: #999; }
 a:link.nonexistent { color: #999; }
@@ -442,7 +483,8 @@ table {
 }
 table, tbody, td, tr, th, colgroup, thead {
 	border: 0;
-	/*    padding: 0;*/
+e	padding: 10px;
+    text-align: 'center';
 }
 table {
 	margin-top: 1em;
@@ -461,13 +503,14 @@ th {
 	padding-bottom: 0.25em;
 }
 td {
-	padding: 0;
+	padding: 20;
 }
 tr:nth-child(even) {
 	background: #f9f9f9;
 }
 tr:nth-child(odd) {
 	background: #ffffff;
+
 }
 tbody {
 	/* border-bottom: 1px solid black; */
