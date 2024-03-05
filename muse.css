@@ -27,7 +27,8 @@ H1{
    margin-top: 5px;
    margin-left: 10px;
    margin-right: 10px;
-   padding: 22px 0px 16px 60px;
+   /* padding: top right buttom left */
+   padding: 10px 10px 10px 10px;
    /*font-family: georgia, "Trebuchet MS";*/
    font-family: "Roboto Mono", monospace;
 
@@ -219,16 +220,16 @@ pre {
    margin-bottom: 20px;
    border: #66c 1px solid;
    padding: 0.5em;
-   white-space: pre;
+   white-space: pre-wrap; /* 修改此行 */
    /* background: #bce;
    background: transparent url("images/bg.jpg") repeat fixed; */
    background: #FFF;
    color: black;
    text-align: left;
-   counter-reset: line; /* chatgpt */
+   counter-reset: line;
 }
 
-/* chatgpt */
+/* Letranger */
 pre .linenr:not(.org-src-container) {
     content: counter(line);
     counter-increment: line;
@@ -239,23 +240,24 @@ pre .linenr:not(.org-src-container) {
     border-right: 1px dashed #66cdaa;
     margin-right: 1em;
     display: inline-block;
+    user-select: none; /* 複製時略過行號 */
 }
 
-/* chatgpt */
+/* Letranger */
 pre .linenr.org-src-container {
     display: none;
 }
 
-/* chatgpt */
+/* Letranger */
 .src .linenr {
-    user-select: none; /* 禁止選擇行号 */
+    user-select: none; /* 複製時略過行號 */
 }
 
 .code {
    padding: 0em;
    border: none;
    background: none;
-   white-space: pre;
+   white-space: pre-wrap;
    color: #003366;
 
    background-color:#EEEEEE;
