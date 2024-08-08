@@ -253,6 +253,10 @@ pre .linenr.org-src-container {
     user-select: none; /* 複製時略過行號 */
 }
 
+.pre .linenr {
+    user-select: none; /* 複製時略過行號 */
+}
+
 .code {
    padding: 0em;
    border: none;
@@ -527,4 +531,19 @@ tbody {
     position: relative;
     top: 0px;
     height: 50px;
+}
+
+.copy-button {
+    position: absolute;
+    right: 10px;
+    top: -10px;
+    background-color: #66cdaa;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.code-container {
+    position: relative;
 }
