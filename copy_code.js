@@ -13,7 +13,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 return line.replace(/^\s*\d+:\s/, ''); // 去除行號及前導空白
             }).join('\n');
 
-            navigator.clipboard.writeText(codeWithoutLineNumbers).then(() => {
+            // 將所有的 "│" 符號替換為空格
+            const codeWithoutSymbols = codeWithoutLineNumbers.replace(/│/g, ' ');
+
+            // 複製到剪貼簿
+            navigator.clipboard.writeText(codeWithoutSymbols).then(() => {
                 copyButton.innerText = "Copied!";
                 setTimeout(() => {
                     copyButton.innerText = "Copy";
