@@ -542,8 +542,12 @@ tbody {
     border: #005a9c 1px solid;
     padding: 5px;
     cursor: pointer;
+    z-index: 2; /* 保證在最上層 */
+
 }
 
 .code-container {
     position: relative;
+    margin-top: 10px;
+
 }
