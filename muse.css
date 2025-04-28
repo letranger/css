@@ -253,9 +253,40 @@ pre .linenr.org-src-container {
     user-select: none; /* 複製時略過行號 */
 }
 
-.pre .linenr {
-    user-select: none; /* 複製時略過行號 */
+pre.src:before {
+    position: absolute;
+    top: -2.3em;       /* 上移一點，貼齊 Copy 按鈕 */
+    right: 30px;       /* 往左推一點，留位置給 Copy 按鈕 */
+    background: white;
+    color: #ff5733;
+    font-size: 0.9em;
+    padding: 4px 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    line-height: 1.2;
 }
+
+button.copy-button {
+    position: absolute;
+    top: -1.0em;          /* 和 Python 小標籤對齊 */
+    right: 10px;          /* 靠右 */
+    background: #0567A2;  /* 原本底色 - 淺灰色 */
+    color: whtie;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 0.9em;
+    padding: 4px 10px;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* ⭐加入優雅的變化 */
+}
+
+button.copy-button:hover {
+    background: #e0e0e0;  /* Hover 時變成更深一點的灰，感覺柔和 */
+    color: #0567A2;
+    border-color: #999;   /* 邊框顏色也稍微加深，層次感提升 */
+}
+
 
 .code {
    padding: 0em;
@@ -551,3 +582,36 @@ tbody {
     margin-top: 10px;
 
 }
+
+/* 讓 code-container 成為定位基準 */
+.code-container {
+  position: relative;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding: 1em;
+}
+
+/* 讓 Copy 按鈕固定在右上角 */
+.code-container .copy-button {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+  padding: 0.3em 0.6em;
+  font-size: 0.8em;
+  cursor: pointer;
+}
+
+/* 讓 src block 本體穩定，不亂跳 */
+pre[class^="src-"], pre[class*=" src-"] {
+  overflow: visible;
+  line-height: 1.5;
+  padding-right: 4em; /* 預留空間給右上角的 copy button */
+}
+
+/* 防止語法高亮的 span 影響行高 */
+pre[class^="src-"] span,
+pre[class*=" src-"] span {
+  position: static;
+  transition: none;
+}
+
