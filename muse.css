@@ -1,44 +1,51 @@
+
+@import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+
 body {
    margin: auto;
    /* width: 650px; */
    width: 90%;
-   /*font: 16px Verdana, Arial, Helvetica, sans-serif;*/
-
-   font-family: "Roboto Mono", monospace;
+   font: 16px Verdana, Arial, Helvetica, sans-serif;
+   /*font-family: "Roboto Mono", monospace;*/
+   /*font-family: "Noto Sans", "Noto Sans TC", "Helvetica", "Microsoft JhengHei", sans-serif;*/
+   font-family: 'Noto Serif TC', serif;
    font-size: 1em;
    font-weight: light;
    background: #fff /*url("images/bg0.png")*/;
    padding: 2%;
    padding-top: 2%;
-   /* text-align: justify; */
-   	font-family: "Roboto Mono", monospace;
-	font-size: 1em;
-	/*font-size: 14px;*/
-	font-weight: 300;
-	color: rgba(51, 51, 51, 1.00);
-	line-height: 1.4em;
-	font-weight: light;
-	counter-reset: section;
-	counter-reset: toc-section;
-	counter-increment: toc-section;
+   font-size: 1em;
+   font-weight: 300;
+   color: rgba(51, 51, 51, 1.00);
+   line-height: 1.4em;
+   font-weight: light;
+   counter-reset: section;
+   counter-reset: toc-section;
+   counter-increment: toc-section;
 }
 
 H1{
    margin-top: 5px;
    margin-left: 10px;
    margin-right: 10px;
-   /* padding: top right buttom left */
    padding: 10px 10px 10px 10px;
-   /*font-family: georgia, "Trebuchet MS";*/
-   font-family: "Roboto Mono", monospace;
+   /*font-family: "Roboto Mono", monospace;*/
+   /*font-family: 'Noto Sans TC',sans-serif !important;*/
+   font-family: 'cwTeXFangSong', serif;
+/*   font-family: "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", sans-serif; */
+/*   font-family: 'Source Han Sans TC', 'Microsoft JhengHei', sans-serif; */
+
+   font-weight: 700;  /* 更具標題感 */
 
    FONT-WEIGHT: bolder;
    COLOR: #004f37;
    /*Border-bottom: #004f37 2px solid;
    Border-left-width: 6px;*/
    background: #d9e7e2;
-   font-size: 48px;
+   font-size: 42px;
    line-height: 1;
+   letter-spacing: 0.5px;
 }
 
 H2 {
@@ -46,24 +53,15 @@ H2 {
   margin-right: 0px;
   margin-top: 50pt;
   PADDING: 3px 0px 3px 10px; 
-/*  COLOR: #005a9c;
-  COLOR: #f63811;
-  COLOR: #c61a02; */ 
   COLOR: #005a9c;
-  font-family: georgia, "Trebuchet MS";
-  font-family: "Roboto Mono", monospace;
+  font-family: ‘cwTeXFangSong’, serif;
   FONT-WEIGHT: BOLD;
   font-size: 24px;
-/*  BORDER-BOTTOM: #005a9c 1px solid;*/
-  BORDER: #005a9c 1px solid; 
+  BORDER: #005a9c 1px solid;
   BORDER-LEFT: #005a9c 6px solid; 
-/*  Border-width: 1px;*/
-/*  BORDER-STYLE: ridge;*/
-  BACKGROUND: #c4d9ef; 
+  BACKGROUND: #c4d9ef;
   line-height: 2;
-  background-image: url(../images/lightblue.gif);
 }
-
 
 H3 {
   margin-left: -25px;
@@ -71,16 +69,11 @@ H3 {
   margin-top: 40pt;   
   PADDING: 3px 0px 3px 10px;
   COLOR: #2b804c;
-/*  COLOR: #6b18e7;
-    color: #ff3300;*/
-  font-family: "Trebuchet MS";
-  font-family: "Roboto Mono", monospace;
+  font-family: ‘cwTeXFangSong’, serif;
   FONT-WEIGHT: BOLD;
   font-size: 20px;
   BORDER-bottom: #2b804c 1px solid; 
   BORDER-LEFT: #2b804c 6px solid;
-/*  BORDER-BOTTOM: #6b18e7 1px dashed;
-  border-style: groove; */
   BACKGROUND: #d9eae0;
   line-height: 1.5;
   background-image: url(../images/lightgreen.gif);
@@ -90,11 +83,10 @@ H4 {
   margin-left: -15px;
   margin-right: 0px;
   PADDING: 3px 0px 3px 10px;
-  font-family: "Trebuchet MS";
-  font-family: "Roboto Mono", monospace;
+  font-family: ‘cwTeXFangSong’, serif;
   FONT-WEIGHT: bold;
   font-size: 18px;
-  /* COLOR: (#963455; fce6eb) (4d2b82, e0d5f1) */
+  COLOR: (#963455; fce6eb) (4d2b82, e0d5f1);
   COLOR: #d04b44;
   BORDER-bottom: #d04b44 1px solid;
   BORDER-LEFT: #d04b44 6px solid;
@@ -266,6 +258,18 @@ pre.src:before {
     line-height: 1.2;
 }
 
+/* <org src block: example>  */
+pre.example {
+  background-color: #fffceb;
+  color: #5c3b00;
+  border: 1px dashed #e0c36c;
+  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  font-size: 0.9em;
+  padding: 1em;
+  line-height: 1.8;
+  border-radius: 5px;
+}
+
 button.copy-button {
     position: absolute;
     top: -1.0em;          /* 和 Python 小標籤對齊 */
@@ -379,7 +383,6 @@ a:hover { text-decoration: underline; }
 }
 
 /* --- Table of contents --- */
-
 #table-of-contents {
 	padding-top: 0em;
 	margin-top: 0em;
@@ -404,15 +407,31 @@ a:hover { text-decoration: underline; }
 	content: "";
 	counter-reset: section;
 }
+/* 主項目：第一層 <ul> 的 <li> */
 #table-of-contents ul li {
-	vertical-align: top;
-	display: inline-block;
-	width: 32%;
+  vertical-align: top;
+  display: inline-block;
+  width: 32%;
+  color: #2b6048;
+  font-weight: 700;
+  margin-bottom: 0.4em;
+}
+#table-of-contents ul li a {
+  color: #2b6048;
+  font-weight: 700;
+}
+/* 子項目：第二層 <ul> 的 <li> */
+#table-of-contents ul li ul li {
+  color: #4f7c72 !important;
+  font-weight: 400;
+  font-size: 0.95em;
+  margin-left: 1.5em;
+  margin-bottom: 0.3em;
 }
 #table-of-contents ul li:before {
+    /*針對前導符號（數字）上色*/
 	display: inline-block;
 	counter-increment: list;
-	/*content: counters(list, ".") ".";*/
 	width: 2.0em;
 	margin-left: -2.0em;
 	text-align: right;
@@ -428,36 +447,26 @@ a:hover { text-decoration: underline; }
 #table-of-contents ul li ul li:before {
 	content: ""
 }
+
+#table-of-contents h2:before {
+   content: "     ";
+}
+
 #table-of-contents h2 {
-	font-size: 1em;
-	font-weight: 400;
-	padding-top: 5em;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'cwTeXFangSong', serif;
+  color: #2b804c; /* 主文字顏色 */
+  background: #fff0d6 url(../css/camus.png) no-repeat left center; /* 背景色+圖片 */
+  background-size: 50px 34px;
+  border: 1px solid #2b804c;
+  border-left: 6px solid #2b804c;
   margin-left: -35px;
   margin-right: 0px;
   margin-top: 50pt;
-  PADDING: 3px 0px 3px 10px;
-/*  COLOR: #005a9c;
-  COLOR: #f63811;
-  COLOR: #c61a02; */
-  COLOR: #005a9c;
-  /*font-family: georgia, "Trebuchet MS";*/
-  FONT-WEIGHT: BOLD;
-  font-size: 24px;
-/*  BORDER-BOTTOM: #005a9c 1px solid;*/
-  BORDER: #005a9c 1px solid;
-  BORDER-LEFT: #005a9c 6px solid;
-/*  Border-width: 1px;*/
-/*  BORDER-STYLE: ridge;*/
-  BACKGROUND: #c4d9ef;
+  padding: 3px 0px 3px 10px;
   line-height: 2;
-  background-image: url(../css/camus.png);
-  background-size: 50px 34px;
-  background-repeat: no-repeat;
-  background-position: left;
   text-indent: 50px;
-}
-#table-of-contents h2:before {
-   content: "     ";
 }
 
 #content, #postamble {
@@ -520,8 +529,8 @@ table {
 }
 table, tbody, td, tr, th, colgroup, thead {
 	border: 0;
-e	padding: 10px;
-    text-align: 'center';
+	padding: 10px;
+    text-align: center;
 }
 table {
 	margin-top: 1em;
