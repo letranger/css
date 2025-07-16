@@ -11,7 +11,9 @@
     window.gtag = gtag;
 
     gtag('js', new Date());
-    gtag('config', 'G-4EJ3V5BG0Z');
+    gtag('config', 'G-4EJ3V5BG0Z', {
+      cookie_domain: 'none'
+    });
   };
 })();
 
