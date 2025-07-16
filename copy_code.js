@@ -1,4 +1,4 @@
-// Google Analytics 初始化（建議放最前面）
+// === Google Analytics 初始化 ===
 (function() {
   const gaScript = document.createElement("script");
   gaScript.async = true;
@@ -15,7 +15,16 @@
   };
 })();
 
-// DOM 載入後的自訂按鈕與複製邏輯
+// === Cloudflare Web Analytics 初始化 ===
+(function() {
+  const cfScript = document.createElement("script");
+  cfScript.defer = true;
+  cfScript.src = "https://static.cloudflareinsights.com/beacon.min.js";
+  cfScript.setAttribute("data-cf-beacon", '{"token": "19668562332a4a18914824d1dca86d07"}');
+  document.head.appendChild(cfScript);
+})();
+
+// === DOM 載入後自動產生「複製按鈕」 ===
 document.addEventListener("DOMContentLoaded", function() {
   const codeBlocks = document.querySelectorAll("pre");
 
@@ -25,16 +34,13 @@ document.addEventListener("DOMContentLoaded", function() {
     copyButton.className = "copy-button";
 
     copyButton.addEventListener("click", () => {
-      // 提取代碼並去除行號
       const codeLines = block.innerText.split('\n');
       const codeWithoutLineNumbers = codeLines.map(line => {
-        return line.replace(/^\s*\d+:\s/, ''); // 去除行號及前導空白
+        return line.replace(/^\s*\d+:\s/, '');
       }).join('\n');
 
-      // 將所有的 "│" 符號替換為空格
       const codeWithoutSymbols = codeWithoutLineNumbers.replace(/│/g, ' ');
 
-      // 複製到剪貼簿
       navigator.clipboard.writeText(codeWithoutSymbols).then(() => {
         copyButton.innerText = "Copied!";
         setTimeout(() => {
