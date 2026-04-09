@@ -1,598 +1,510 @@
 
 @import url(https://fonts.googleapis.com/earlyaccess/cwtexfangsong.css);
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@300;400;700&display=swap');
 
-body {
-   margin: auto;
-   /* width: 650px; */
-   width: 90%;
-   font: 16px Verdana, Arial, Helvetica, sans-serif;
-   /*font-family: "Roboto Mono", monospace;*/
-   /*font-family: "Noto Sans", "Noto Sans TC", "Helvetica", "Microsoft JhengHei", sans-serif;*/
-   font-family: 'Noto Serif TC', serif;
-   font-size: 1em;
-   font-weight: light;
-   background: #fff /*url("images/bg0.png")*/;
-   padding: 2%;
-   padding-top: 2%;
-   font-size: 1em;
-   font-weight: 300;
-   color: rgba(51, 51, 51, 1.00);
-   line-height: 1.4em;
-   font-weight: light;
-   counter-reset: section;
-   counter-reset: toc-section;
-   counter-increment: toc-section;
+/* ============================
+   色彩系統（統一管理）
+   ============================ */
+:root {
+  --c-primary:    #1a5632;   /* 墨綠：H1、H3 */
+  --c-secondary:  #1a4a7a;   /* 深藍：H2 */
+  --c-accent:     #8b4513;   /* 赭褐：H4 */
+  --c-subtle:     #4a7a6a;   /* 灰綠：H5、輔助文字 */
+  --c-text:       #2c2c2c;   /* 正文 */
+  --c-text-light: #666;      /* 次要文字 */
+  --c-bg:         #fcfcfa;   /* 頁面底色（微暖白） */
+  --c-bg-code:    #f6f8fa;   /* 程式碼底色 */
+  --c-border:     #d0d7de;   /* 邊框 */
+  --c-link:       #1a5a9c;   /* 連結 */
+  --c-link-visit: #6a5aac;   /* 已訪問 */
 }
 
-H1{
-   margin-top: 5px;
-   margin-left: 10px;
-   margin-right: 10px;
-   padding: 10px 10px 10px 10px;
-   /*font-family: "Roboto Mono", monospace;*/
-   /*font-family: 'Noto Sans TC',sans-serif !important;*/
-   font-family: 'cwTeXFangSong', serif;
-/*   font-family: "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", sans-serif; */
-/*   font-family: 'Source Han Sans TC', 'Microsoft JhengHei', sans-serif; */
+/* ============================
+   基礎
+   ============================ */
+body {
+  margin: auto;
+  width: 90%;
+  font-family: 'Noto Serif TC', 'Georgia', serif;
+  font-size: 1em;
+  font-weight: 300;
+  background: var(--c-bg);
+  padding: 2%;
+  color: var(--c-text);
+  line-height: 1.75em;
+  counter-reset: section toc-section;
+  counter-increment: toc-section;
+}
 
-   font-weight: 700;  /* 更具標題感 */
-
-   FONT-WEIGHT: bolder;
-   COLOR: #004f37;
-   /*Border-bottom: #004f37 2px solid;
-   Border-left-width: 6px;*/
-   background: #d9e7e2;
-   font-size: 42px;
-   line-height: 1;
-   letter-spacing: 0.5px;
+/* ============================
+   標題系統（墨綠 → 深藍 → 赭褐 漸層）
+   ============================ */
+H1 {
+  margin: 5px 10px;
+  padding: 12px 16px;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: 700;
+  color: var(--c-primary);
+  background: linear-gradient(135deg, #e8f0ec 0%, #d4e4da 100%);
+  font-size: 2.4em;
+  line-height: 1.2;
+  letter-spacing: 1px;
+  border-bottom: 3px solid var(--c-primary);
 }
 
 H2 {
-  margin-left: -35px;
-  margin-right: 0px;
-  margin-top: 50pt;
-  PADDING: 3px 0px 3px 10px; 
-  COLOR: #005a9c;
-  font-family: ‘cwTeXFangSong’, serif;
-  FONT-WEIGHT: BOLD;
-  font-size: 24px;
-  BORDER: #005a9c 1px solid;
-  BORDER-LEFT: #005a9c 6px solid; 
-  BACKGROUND: #c4d9ef;
-  line-height: 2;
+  margin: 50pt 0 0 -35px;
+  padding: 6px 12px 6px 14px;
+  color: var(--c-secondary);
+  font-family: 'cwTeXFangSong', serif;
+  font-weight: bold;
+  font-size: 1.5em;
+  border: 1px solid var(--c-secondary);
+  border-left: 6px solid var(--c-secondary);
+  background: #e8eef6;
+  line-height: 1.8;
 }
 
 H3 {
-  margin-left: -25px;
-  margin-right: 0px;
-  margin-top: 40pt;   
-  PADDING: 3px 0px 3px 10px;
-  COLOR: #2b804c;
-  font-family: ‘cwTeXFangSong’, serif;
-  FONT-WEIGHT: BOLD;
-  font-size: 20px;
-  BORDER-bottom: #2b804c 1px solid; 
-  BORDER-LEFT: #2b804c 6px solid;
-  BACKGROUND: #d9eae0;
+  margin: 40pt 0 0 -25px;
+  padding: 5px 10px 5px 12px;
+  color: var(--c-primary);
+  font-family: 'cwTeXFangSong', serif;
+  font-weight: bold;
+  font-size: 1.25em;
+  border-bottom: 1px solid var(--c-primary);
+  border-left: 6px solid var(--c-primary);
+  background: #eaf2ec;
   line-height: 1.5;
-  background-image: url(../images/lightgreen.gif);
 }
 
 H4 {
-  margin-left: -15px;
-  margin-right: 0px;
-  PADDING: 3px 0px 3px 10px;
-  font-family: ‘cwTeXFangSong’, serif;
-  FONT-WEIGHT: bold;
-  font-size: 18px;
-  COLOR: (#963455; fce6eb) (4d2b82, e0d5f1);
-  COLOR: #d04b44;
-  BORDER-bottom: #d04b44 1px solid;
-  BORDER-LEFT: #d04b44 6px solid;
-  /*BACKGROUND: #f2dad8;*/
-  line-height: 1;
-/*  background-image: url(../images/nicebg2.png);*/
+  margin: 20pt 0 0 -15px;
+  padding: 4px 10px 4px 12px;
+  font-family: 'cwTeXFangSong', serif;
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--c-accent);
+  border-bottom: 1px solid var(--c-accent);
+  border-left: 5px solid var(--c-accent);
+  line-height: 1.4;
 }
 
 H5 {
-/*   border: grey 1px dashed; */
-  margin: 10px 0px 2px 0px;
-  font-size: 16pt;
-  color: #7b7b5a;
-  line-height: 1;
-}
-
-H5 {
-  margin-left: -5px;
-  margin-right: 0px;
-  PADDING: 3px 0px 3px 10px;
-  font-family: "Trebuchet MS";
-  font-family: "Roboto Mono", monospace;
-  FONT-WEIGHT: bold;
-  font-size: 16px;
-  /* COLOR: (#963455; fce6eb) (4d2b82, e0d5f1) */
-  COLOR: #148F77;
-  BORDER-bottom: #148F77 1px solid;
-  BORDER-LEFT: #148F77 4px solid;
-  /*BACKGROUND: #f2dad8;*/
-  line-height: 1;
-/*  background-image: url(../images/nicebg2.png);*/
+  margin: 15pt 0 0 -5px;
+  padding: 3px 10px;
+  font-family: 'Noto Serif TC', serif;
+  font-weight: bold;
+  font-size: 1em;
+  color: var(--c-subtle);
+  border-bottom: 1px solid var(--c-subtle);
+  border-left: 4px solid var(--c-subtle);
+  line-height: 1.3;
 }
 
 H2:hover, H3:hover, H4:hover, H5:hover {
-  BORDER-bottom-style: dashed; 
+  border-bottom-style: dashed;
 }
 
-
 H2:link, H2:active, H3:link, H3:active, H4:link, H4:active, H5:link, H5:active {
-	border-width: 1px;
-	border-style: inset;
+  border-width: 1px;
+  border-style: inset;
 }
 
 H6.mulu {
-/*  color: #083729;*/
-	color: #46357c;
-  margin: 0px 0px -10px -35px;
+  color: #46357c;
+  margin: 0 0 -10px -35px;
   font-size: 14px;
 }
-.postmeta {
-   font-size: 9px;
-   font-weight: bold;
-   text-align: right;
-   color: #777;
-   padding: 0;   fixed: left;
 
-   margin: 0 0 24px 0;
-   float: none;
-   clear: none;
-   border: none;
-   margin: 2px;
-   vertical-align: middle;
-}
-
-.postmeta a:link, .postmeta a:visited, .postmeta a:active, .postmeta a:hover
-{
-   color: #777;
-   text-decoration: none;
-   border-width: 0;
-}
-
-img {
-   fixed: left;
-   clear: both;
-   margin: 2px;
-   border: #777 1px dashed;
-}
-
-div.logo { 
-   position: absolute; 
-   top: 0px; 
-   left: 0px; 
-   height: 78px; width: 142px;
-   z-index: 4;
-   background-image: url(images/psu.gif); 
-}
-
-.visuals {
-  float: right;
-  margin: 10px;
-  padding: 10px;
-}
-
-.rotes {
-   border: 0px;
-}
-
-.middle { 
-   vertical-align: middle;
-   text-align: center;
-   border: 1px solid;
-   float: none;
-   clear: none;
-   margin: auto;
-}
-
-.centered { 
-   text-align: center;
-   margin-left: auto;
-   margin-right: auto;
-   border: 0px solid;
-   margin: 10px;
-   float: none;
-   clear: both;
-}
-
-.dot { 
-   border-width: 0px;
-}
-
+/* ============================
+   程式碼區塊
+   ============================ */
 pre {
-   margin-top: 5px;
-   margin-bottom: 20px;
-   border: #66c 1px solid;
-   padding: 0.5em;
-   white-space: pre-wrap; /* 修改此行 */
-   /* background: #bce;
-   background: transparent url("images/bg.jpg") repeat fixed; */
-   background: #FFF;
-   color: black;
-   text-align: left;
-   counter-reset: line;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  padding: 0.8em;
+  padding-left: 4.5em;
+  white-space: pre-wrap;
+  background: var(--c-bg-code);
+  color: var(--c-text);
+  text-align: left;
+  counter-reset: line;
+  font-size: 1em;
+  line-height: 1.6;
 }
 
-/* Letranger */
+/* 行號 */
 pre .linenr:not(.org-src-container) {
-    content: counter(line);
-    counter-increment: line;
-    padding-right: 1em;
-    color: #999;
-    color: #20b2aa;
-    border-right: 1px solid #ddd;
-    border-right: 1px dashed #66cdaa;
-    margin-right: 1em;
-    display: inline-block;
-    user-select: none; /* 複製時略過行號 */
+  content: counter(line);
+  counter-increment: line;
+  padding-right: 1em;
+  color: #a0b0a8;
+  border-right: 1px dashed #c0d0c8;
+  margin-right: 1em;
+  margin-left: -4.5em;
+  display: inline-block;
+  width: 3em;
+  text-align: right;
+  user-select: none;
 }
 
-/* Letranger */
 pre .linenr.org-src-container {
-    display: none;
+  display: none;
 }
 
-/* Letranger */
 .src .linenr {
-    user-select: none; /* 複製時略過行號 */
+  user-select: none;
 }
 
+/* 語言標籤（Python / Shell 等），對齊 Copy 按鈕 */
 pre.src:before {
-    position: absolute;
-    top: -2.3em;       /* 上移一點，貼齊 Copy 按鈕 */
-    right: 30px;       /* 往左推一點，留位置給 Copy 按鈕 */
-    background: white;
-    color: #ff5733;
-    font-size: 0.9em;
-    padding: 4px 10px;
-    border: 1px solid gray;
-    border-radius: 5px;
-    line-height: 1.2;
+  display: inline !important;
+  margin-top: 0 !important;
+  position: absolute;
+  top: -15px;
+  right: 30px;
+  background: white;
+  color: var(--c-accent);
+  font-size: 0.9em;
+  font-weight: 400;
+  padding: 4px 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  line-height: 1.2;
+  z-index: 1;
 }
 
-/* <org src block: example>  */
+/* Example block */
 pre.example {
-  background-color: #fffceb;
-  color: #5c3b00;
-  border: 1px dashed #e0c36c;
-  font-family: "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+  background-color: #fefcf3;
+  color: #5c4a1e;
+  border: 1px dashed #d8c88c;
+  font-family: 'Noto Serif TC', serif;
   font-size: 0.9em;
   padding: 1em;
+  padding-left: 1em;
   line-height: 1.8;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
+/* Copy 按鈕（保持原樣） */
 button.copy-button {
-    position: absolute;
-    top: -1.0em;          /* 和 Python 小標籤對齊 */
-    right: 10px;          /* 靠右 */
-    background: #0567A2;  /* 原本底色 - 淺灰色 */
-    color: whtie;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 0.9em;
-    padding: 4px 10px;
-    line-height: 1.2;
-    cursor: pointer;
-    transition: background-color 0.3s ease, border-color 0.3s ease; /* ⭐加入優雅的變化 */
+  position: absolute;
+  top: -1.0em;
+  right: 10px;
+  background: #0567A2;
+  color: white;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9em;
+  padding: 4px 10px;
+  line-height: 1.2;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 button.copy-button:hover {
-    background: #e0e0e0;  /* Hover 時變成更深一點的灰，感覺柔和 */
-    color: #0567A2;
-    border-color: #999;   /* 邊框顏色也稍微加深，層次感提升 */
+  background: #e0e0e0;
+  color: #0567A2;
+  border-color: #999;
 }
 
-
-.code {
-   padding: 0em;
-   border: none;
-   background: none;
-   white-space: pre-wrap;
-   color: #003366;
-
-   background-color:#EEEEEE;
-   font-family: Consolas, Monaco, 'Lucida Console', 'Liberation Mono', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', 'Courier New';
+/* src block 穩定性 */
+pre[class^="src-"], pre[class*=" src-"] {
+  overflow: visible;
+  line-height: 1.6;
+  padding-right: 4em;
 }
 
+pre[class^="src-"] span,
+pre[class*=" src-"] span {
+  position: static;
+  transition: none;
+}
+
+/* ============================
+   連結
+   ============================ */
+a { text-decoration: none; }
+a:link { color: var(--c-link); padding: 1px; }
+a:active { color: #999; }
+a:visited { color: var(--c-link-visit); }
+a:hover {
+  text-decoration: none;
+  border-bottom: 1px solid var(--c-link);
+  padding-bottom: 1px;
+}
+
+/* ============================
+   圖片
+   ============================ */
+img {
+  clear: both;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* ============================
+   清單
+   ============================ */
 ul { margin-top: 5px; margin-bottom: 5px; }
 ol { margin-top: 5px; margin-bottom: 5px; }
+li { margin-bottom: 0.2em; }
 
-
+/* ============================
+   分隔線
+   ============================ */
 hr {
-   width: 100%;
-   color: #777;
-   background-color: #777;
-   height: 0.5px;
-   margin: 0px;
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, var(--c-border), transparent);
+  margin: 1.5em 0;
 }
 
+/* ============================
+   表格
+   ============================ */
 table {
-   border: #66c 1px solid;
-   background: #eee
-   padding: 2px;
-   margin-top: 5px;
-   margin-left: auto;
-   margin-right: auto; 
+  min-width: 100%;
+  margin-top: 1em;
+  border-collapse: collapse;
+  border-top: 2px solid var(--c-primary);
+  border-bottom: 2px solid var(--c-primary);
 }
 
-table.paper { background: #fff; border: 1px dotted #6699CC; }
-
-table.ruled { 
-   color: #404040;
-   background-color: #fafafa;
-   border: 1px #6699CC solid;
-   border-collapse: collapse;
-   border-spacing: 0px;
-   margin-top: 0px;
+table, tbody, td, tr, th, colgroup, thead {
+  border: 0;
+  padding: 10px;
+  text-align: center;
 }
 
-table.ruled td {
-   color: #404040;
-   background-color: white;
-   text-align: left;
-   padding-left: 3px;
+thead {
+  background: #eaf2ec;
+  border-bottom: 1px solid var(--c-primary);
 }
 
-
-.nonexistent { color: #999; }
-a:link.nonexistent { color: #999; }
-a:hover.nonexistent { text-decoration: none; }
-a { text-decoration: none; }
-a:link { color: #369; padding: 2px; }
-a:active { color: #999; padding: 2px; }
-a:visited { color: #69c; padding: 2px; }
-a:hover { text-decoration: underline; }
-/* a:hover { text-decoration: none; background: lightgrey; padding: 1px; border: 1px solid gray; } */
-
-#navlist ul
-{
-   margin-left: 0;
-   padding-left: 0;
+th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--c-primary);
+  padding: 8px 10px;
 }
 
-#navlist li
-{
-   display: inline;
-   list-style-type: none;
-   text-align: left;
+td {
+  padding: 8px 10px;
 }
 
-#navlist a { padding: 3px 10px; border: 1px; }
+tr:nth-child(even) { background: #f7f9f8; }
+tr:nth-child(odd) { background: #fff; }
 
-#navlist a:link, #navlist a:visited
-{
-   color: #fff;
-   background-color: #036;
-   text-decoration: none;
+tr:hover {
+  background: #eef4f0;
 }
 
-#navlist a:hover
-{
-   color: #fff;
-   background-color: #369;
-   text-decoration: none;
-}
-
-/* --- Table of contents --- */
+/* ============================
+   TOC 目錄
+   ============================ */
 #table-of-contents {
-	padding-top: 0em;
-	margin-top: 0em;
-	text-transform: uppercase;
+  padding-top: 0;
+  margin-top: 0;
+  text-transform: uppercase;
 }
+
 #table-of-contents ul {
-	padding: 0;
-	font-weight: 400;
-	list-style: none;
-	counter-reset: list 0;
+  padding: 0;
+  font-weight: 400;
+  list-style: none;
+  counter-reset: list 0;
 }
+
 #table-of-contents ul ul {
-	padding-left: 0em;
-	font-weight: 300;
-	font-size: 90%;
-	line-height: 1.5em;
-	margin-top: 0em;
-	margin-bottom: 1em;
-	padding-left: 2em;
+  padding-left: 2em;
+  font-weight: 300;
+  font-size: 90%;
+  line-height: 1.5em;
+  margin-top: 0;
+  margin-bottom: 1em;
 }
+
 #table-of-contents h2:before {
-	content: "";
-	counter-reset: section;
+  content: "";
+  counter-reset: section;
 }
-/* 主項目：第一層 <ul> 的 <li> */
+
 #table-of-contents ul li {
   vertical-align: top;
   display: inline-block;
   width: 32%;
-  color: #2b6048;
+  color: var(--c-primary);
   font-weight: 700;
   margin-bottom: 0.4em;
 }
+
 #table-of-contents ul li a {
-  color: #2b6048;
+  color: var(--c-primary);
   font-weight: 700;
 }
-/* 子項目：第二層 <ul> 的 <li> */
+
 #table-of-contents ul li ul li {
-  color: #4f7c72 !important;
+  color: var(--c-subtle) !important;
   font-weight: 400;
   font-size: 0.95em;
   margin-left: 1.5em;
   margin-bottom: 0.3em;
 }
+
 #table-of-contents ul li:before {
-    /*針對前導符號（數字）上色*/
-	display: inline-block;
-	counter-increment: list;
-	width: 2.0em;
-	margin-left: -2.0em;
-	text-align: right;
-	text-transform: uppercase;
-	color: #2255bb;
+  display: inline-block;
+  counter-increment: list;
+  width: 2em;
+  margin-left: -2em;
+  text-align: right;
+  text-transform: uppercase;
+  color: var(--c-secondary);
 }
-#table-of-contents ul li ul, #table-of-contents ul li ul li {
-	display: static;
-	width: 100%;
-	padding-left: 0;
-	line-height: 1.35em;
+
+#table-of-contents ul li ul,
+#table-of-contents ul li ul li {
+  display: static;
+  width: 100%;
+  padding-left: 0;
+  line-height: 1.35em;
 }
+
 #table-of-contents ul li ul li:before {
-	content: ""
+  content: "";
 }
 
 #table-of-contents h2:before {
-   content: "     ";
+  content: "     ";
 }
 
 #table-of-contents h2 {
   font-size: 24px;
   font-weight: bold;
-  font-family: 'cwTeXFangSong', serif;
-  color: #2b804c; /* 主文字顏色 */
-  background: #fff0d6 url(../css/camus.png) no-repeat left center; /* 背景色+圖片 */
+  font-family: 'Noto Serif TC', serif;
+  color: var(--c-primary);
+  background: #faf5ea url(../css/camus.png) no-repeat left center;
   background-size: 50px 34px;
-  border: 1px solid #2b804c;
-  border-left: 6px solid #2b804c;
+  border: 1px solid var(--c-primary);
+  border-left: 6px solid var(--c-primary);
   margin-left: -35px;
-  margin-right: 0px;
+  margin-right: 0;
   margin-top: 50pt;
-  padding: 3px 0px 3px 10px;
+  padding: 3px 0 3px 10px;
   line-height: 2;
   text-indent: 50px;
 }
 
+/* ============================
+   頁尾
+   ============================ */
 #content, #postamble {
-	margin: 0 auto;
-	max-width: 920px;
-	margin-top: 2.5%;
-	margin-bottom: 2.5%;
+  margin: 0 auto;
+  max-width: 920px;
+  margin-top: 2.5%;
+  margin-bottom: 2.5%;
 }
 
 #postamble {
-	/*    border-top: 1px solid #999999; */
-	padding-top: 1.5em;
+  padding-top: 1.5em;
 }
+
 #postamble p, #postamble a {
-	color: #999999;
-	line-height: 1.25em;
-	margin: 0;
-	text-align: right;
+  color: #999;
+  line-height: 1.25em;
+  margin: 0;
+  text-align: right;
 }
 
+/* ============================
+   標籤、狀態
+   ============================ */
 span.tag {
-    background-color: #EDEDED;
-    border: 1px solid #EDEDED;
-    color: #939393;
-    cursor: pointer;
-    display: block;
-    float: right;
-    font-size: 80%;
-    font-weight: normal;
-    margin: 0 3px;
-    padding: 1px 2px;
-    border-radius: 10px;
+  background-color: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  color: #888;
+  cursor: pointer;
+  display: block;
+  float: right;
+  font-size: 80%;
+  font-weight: normal;
+  margin: 0 3px;
+  padding: 1px 6px;
+  border-radius: 10px;
 }
+
 span.todo {
-    background-color: #f29f97;
-    padding: 0px 4px;
-    color: #fff;
+  background-color: #e8806a;
+  padding: 1px 6px;
+  color: #fff;
+  border-radius: 3px;
 }
+
 span.todo.WAIT {
-    background-color: #6AB097;
+  background-color: #6ab097;
 }
+
 span.todo.done {
-    background-color: #6ab0de;
-    padding: 0px 4px;
-    color: #fff;
-
+  background-color: #6ab0de;
+  padding: 1px 6px;
+  color: #fff;
 }
+
 span.flagged {
-    background-color: #DB2D27;
-    border: 1px solid #DB2D27;
-    color: white;
-    font-weight: bold;
+  background-color: #c0392b;
+  border: 1px solid #c0392b;
+  color: white;
+  font-weight: bold;
 }
 
-
-/* --- Table --- */
-
-table {
-	min-width: 100%;
-}
-table, tbody, td, tr, th, colgroup, thead {
-	border: 0;
-	padding: 10px;
-    text-align: center;
-}
-table {
-	margin-top: 1em;
-    border-bottom: 1px solid gray;
-}
-thead {
-	/*border-bottom: 1px hed black;*/
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray;
-}
-th {
-	text-align: left;
-	font-weight: 400;
-	padding: 0;
-	margin-bottom: 0.25em;
-	padding-bottom: 0.25em;
-}
-td {
-	padding: 20;
-}
-tr:nth-child(even) {
-	background: #f9f9f9;
-}
-tr:nth-child(odd) {
-	background: #ffffff;
-
-}
-tbody {
-	/* border-bottom: 1px solid black; */
-}
-.footer {
-    bottom:0px;
-    padding:20px;
-    width: 100%;
-    /*background: #6cf;*/
-}
-.footer{
-    position: relative;
-    top: 0px;
-    height: 50px;
+/* ============================
+   blockquote（引用區塊）
+   ============================ */
+blockquote {
+  border-left: 4px solid var(--c-subtle);
+  background: #f5f7f6;
+  margin: 1em 0;
+  padding: 0.8em 1.2em;
+  color: var(--c-text-light);
+  font-style: italic;
+  border-radius: 0 6px 6px 0;
 }
 
-.copy-button {
-    position: absolute;
-    right: 10px;
-    top: -15px;
-    background-color: #0277bd;
-    color: white;
-    border: #005a9c 1px solid;
-    padding: 5px;
-    cursor: pointer;
-    z-index: 2; /* 保證在最上層 */
-
+/* ============================
+   雜項
+   ============================ */
+.postmeta {
+  font-size: 9px;
+  font-weight: bold;
+  text-align: right;
+  color: #777;
+  padding: 0;
+  margin: 2px;
+  vertical-align: middle;
 }
 
-.code-container {
-    position: relative;
-    margin-top: 10px;
-
+.postmeta a:link, .postmeta a:visited, .postmeta a:active, .postmeta a:hover {
+  color: #777;
+  text-decoration: none;
+  border-width: 0;
 }
 
-/* 讓 code-container 成為定位基準 */
+.code {
+  padding: 0;
+  border: none;
+  background: var(--c-bg-code);
+  white-space: pre-wrap;
+  color: #003366;
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+}
+
 .code-container {
   position: relative;
   overflow-x: auto;
@@ -600,7 +512,6 @@ tbody {
   padding: 1em;
 }
 
-/* 讓 Copy 按鈕固定在右上角 */
 .code-container .copy-button {
   position: absolute;
   top: 0.5em;
@@ -610,17 +521,30 @@ tbody {
   cursor: pointer;
 }
 
-/* 讓 src block 本體穩定，不亂跳 */
-pre[class^="src-"], pre[class*=" src-"] {
-  overflow: visible;
-  line-height: 1.5;
-  padding-right: 4em; /* 預留空間給右上角的 copy button */
+.copy-button {
+  position: absolute;
+  right: 10px;
+  top: -15px;
+  background-color: #0277bd;
+  color: white;
+  border: #005a9c 1px solid;
+  padding: 5px;
+  cursor: pointer;
+  z-index: 2;
 }
 
-/* 防止語法高亮的 span 影響行高 */
-pre[class^="src-"] span,
-pre[class*=" src-"] span {
-  position: static;
-  transition: none;
+/* 已合併至 button.copy-button */
+
+.footer {
+  position: relative;
+  bottom: 0;
+  padding: 20px;
+  width: 100%;
+  height: 50px;
 }
 
+#navlist ul { margin-left: 0; padding-left: 0; }
+#navlist li { display: inline; list-style-type: none; text-align: left; }
+#navlist a { padding: 3px 10px; border: 1px; }
+#navlist a:link, #navlist a:visited { color: #fff; background-color: var(--c-secondary); text-decoration: none; }
+#navlist a:hover { color: #fff; background-color: var(--c-link); text-decoration: none; }
