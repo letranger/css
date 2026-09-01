@@ -548,3 +548,20 @@ blockquote {
 #navlist a { padding: 3px 10px; border: 1px; }
 #navlist a:link, #navlist a:visited { color: #fff; background-color: var(--c-secondary); text-decoration: none; }
 #navlist a:hover { color: #fff; background-color: var(--c-link); text-decoration: none; }
+
+/* ============================
+   程式碼語法上色（org htmlize css 模式）
+   ============================ */
+pre.src .org-keyword           { color: #cf222e; }
+pre.src .org-builtin           { color: #8250df; }
+pre.src .org-function-name     { color: #6639ba; font-weight: 500; }
+pre.src .org-variable-name     { color: #953800; }
+pre.src .org-string            { color: #0a3069; }
+pre.src .org-doc               { color: #0a3069; font-style: italic; }
+pre.src .org-comment,
+pre.src .org-comment-delimiter { color: #6e7781; font-style: italic; }
+pre.src .org-constant          { color: #0550ae; }
+pre.src .org-type              { color: #953800; }
+pre.src .org-preprocessor      { color: #cf222e; }
+pre.src .org-operator          { color: #2c2c2c; }
+pre.src .org-warning           { color: #cf222e; font-weight: bold; }
